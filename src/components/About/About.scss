@@ -2,7 +2,7 @@
     width: 100%;
 
     &__hero {
-        height: 25rem;
+        height: 50rem;
         width: 100%;
         background: url("../../assets/images/shooting-star.gif") no-repeat;
         background-size: cover;
@@ -18,13 +18,55 @@
             &-char {
                 position: relative;
                 display: inline-block;
-                color: white;
+                color: #F1F0EA;
                 font-weight: 500;
             }
         }
     }
 
     &__details {
-        
+        height: 75rem;
+        width: 100%;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 2rem;
+            line-height: 2rem;
+            font-weight: 700;
+            color: #F1F0EA;
+        }
+
+        &__image-container {
+            width: 100%;
+            height: 18.75rem;
+            overflow: hidden;
+            border-radius: .625rem;
+
+            &-img {
+                width: 100%;
+            }
+        }
+
+        &__description__container {
+            padding-top: 1.5rem;
+            height: 750px;
+
+            &-title {
+                color: #F1F0EA;
+                font-weight: 500;
+                font-size: 1.5rem;
+                
+            }
+
+            &-descrip {
+                padding-top: 1rem;
+                color: #F1F0EA;
+                font-size: 1rem;
+            }
+        }
     }
 }
