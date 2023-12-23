@@ -1,5 +1,7 @@
 .about {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 
     &__hero {
         height: 50rem;
@@ -25,11 +27,11 @@
     }
 
     &__details {
-        height: 73.4375rem;
         width: 100%;
         padding: 0 1rem;
         display: flex;
         flex-direction: column;
+        padding-bottom: 1.5rem;
 
         &-title {
             text-align: center;
@@ -53,7 +55,6 @@
 
         &__description__container {
             padding-top: 1.5rem;
-            height: 46.875rem;
 
             &-title {
                 color: #F1F0EA;
@@ -74,7 +75,6 @@
     &__skillset {
         width: 90%;
         margin: auto;
-        height: 121.875rem;
         padding: 1.5rem 1rem 1rem 1rem;
         background-color: #A1ACBD;
         border-radius: .5rem;

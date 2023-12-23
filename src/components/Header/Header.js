@@ -1,5 +1,6 @@
 import "./Header.scss";
 import logo from "../../assets/logo/GHL-Logo.png";
+import resume from "../../assets/resume/Resume.pdf";
 import { useState } from "react";
 
 
@@ -35,8 +36,8 @@ function Header() {
                         <ul className="header__mobile-nav__container__menu">
                             <li className="header__mobile-nav__container__menu__list"><a href="#about" className="header__mobile-nav__container__menu__list-link">About</a></li>
                             <li className="header__mobile-nav__container__menu__list"><a href="#project" className="header__mobile-nav__container__menu__list-link">Projects</a></li>
-                            <li className="header__mobile-nav__container__menu__list">Contact</li>
-                            <li className="header__mobile-nav__container__menu__list">Resume</li>
+                            <li className="header__mobile-nav__container__menu__list"><a href="#contact" className="header__mobile-nav__container__menu__list-link">Contact</a></li>
+                            <li className="header__mobile-nav__container__menu__list"><a href={resume}  className="header__mobile-nav__container__menu__list-link">Resume</a></li>
                         </ul>
                 </div>
             </nav>
