@@ -1,0 +1,152 @@
+.project{
+    padding-top: 1.5rem;
+    height: 114.375rem;
+    width: 100%;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        &__header{
+            padding-bottom: 1rem;
+            &-title {
+                font-size: 2rem;
+                color: #F1F0EA;
+                text-align: center;
+                font-weight: 700;
+            }
+        }
+
+        &__body {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+
+            &__project {
+                display: flex;
+                flex-direction: column;
+
+                &-title {
+                    color: #F1F0EA;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    padding-bottom: 1rem;
+                }
+
+                &-img {
+                    width: 100%;
+                    height: 13.75rem;
+                }
+
+                &__details {
+                    padding-top: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .3125rem;
+
+                    &__info {
+                        display: flex;
+                        justify-content: flex-start;
+                        gap: .625rem;
+                        &-year {
+                            color: #bad3fd;
+                            font-size: 1rem;
+                            border: 1px solid #bad3fd;
+                            width: 3.125rem;
+                            text-align: center;
+                            border-radius: .5rem;
+                            padding: .3125rem;
+                        }
+    
+                        &-tech__stack {
+                            color: #bad3fd;
+                            font-size: 1rem;
+                            border: 1px solid #bad3fd;
+                            width: 8.75rem;
+                            text-align: center;
+                            border-radius: .5rem;
+                            padding: .3125rem;
+                        }
+                    }
+
+                    &__container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .625rem;
+                        padding-bottom: 1.5rem;
+
+                        &-description {
+                            color: #F1F0EA;
+                            font-size: .875rem
+                        }
+                    }
+                }
+            }
+
+            &__hackathon {
+                &__project {
+                    display: flex;
+                    flex-direction: column;
+
+                    &-title {
+                        color: #F1F0EA;
+                        font-size: 1.5rem;
+                        text-align: center;
+                        padding-bottom: 1rem;
+                    }
+    
+                    &-img {
+                        width: 100%;
+                        height: 13.75rem;
+                    }
+    
+                    &__details {
+                        padding-top: 8px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: .3125rem;
+    
+                        &__info {
+                            display: flex;
+                            justify-content: flex-start;
+                            gap: .625rem;
+                            &-year {
+                                color: #bad3fd;
+                                font-size: 1rem;
+                                border: 1px solid #bad3fd;
+                                width: 3.125rem;
+                                text-align: center;
+                                border-radius: .5rem;
+                                padding: .3125rem;
+                            }
+        
+                            &-tech__stack {
+                                color: #bad3fd;
+                                font-size: 1rem;
+                                border: 1px solid #bad3fd;
+                                width: 8.75rem;
+                                text-align: center;
+                                border-radius: .5rem;
+                                padding: .3125rem;
+                            }
+                        }
+    
+                        &__container {
+                            display: flex;
+                            flex-direction: column;
+                            gap: .625rem;
+                            padding-bottom: 1.5rem;
+    
+                            &-description {
+                                color: #F1F0EA;
+                                font-size: .875rem
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+    }
+
+}
