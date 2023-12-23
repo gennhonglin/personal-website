@@ -23,7 +23,7 @@
                 height: 2.5rem;
                 font-size: 1rem;
                 font-weight: 700;
-                color: #E0DDCF;
+                color: #F1F0EA;
                 margin-top: .625rem;
             }
         }
@@ -41,12 +41,12 @@
                 appearance: none;
                 background: none;
                 outline: none;
-                border: 1px solid #E0DDCF;
+                border: 1px solid #F1F0EA;
                 padding: 0 .5rem;
                 border-radius: .5rem;
 
                 &:hover {
-                    background-color: #534B52;
+                    background-color: #A1ACBD;
                 }
 
                 &-bar, &::before, &::after {
@@ -54,13 +54,13 @@
                     display: block;
                     width: 100%;
                     height: 2px;
-                    background-color: #E0DDCF;
+                    background-color: #F1F0EA;
                     margin: 2px 0;
                     transition: 0.4s;
                 }
 
                 &.active {
-                    background-color: #534B52;
+                    background-color: #A1ACBD;
                 }
             }
 
@@ -89,7 +89,16 @@
 
                 &__list {
                     list-style: none;
-                    color: #E0DDCF;
+                    color: #171D25;
+
+                    &-link {
+                        color: #171D25;
+                        text-decoration: none;
+                        
+                        &:hover {
+                            font-weight: 500;
+                        }
+                    }
                 }
             }
         }
@@ -102,9 +111,9 @@
             height: 9.375rem;
             width: 9.375rem;
             transform: translate(-0.5rem , 3.75rem);
-            border: 1px solid #E0DDCF;
+            border: 2px solid #171D25;
             border-radius: .5rem;
-            background-color: #2D232E;
+            background-color: #A1ACBD;
         }
     }
 }

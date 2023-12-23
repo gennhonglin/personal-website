@@ -22,7 +22,7 @@ function Header() {
         <header className="header">
             <nav className="header__mobile-nav">
                 <div className="header__mobile-nav__left">
-                    <img src={logo} className="header__mobile-nav__left-logo"></img>
+                    <img alt="logo" src={logo} className="header__mobile-nav__left-logo"></img>
                     <h2 className="header__mobile-nav__left-title">Genn-Hong Lin</h2>
                 </div>
                 <div className="header__mobile-nav__right">
@@ -33,8 +33,8 @@ function Header() {
 
                 <div className={`header__mobile-nav__container ${hamburger ? 'active' : ''}`}>
                         <ul className="header__mobile-nav__container__menu">
-                            <li className="header__mobile-nav__container__menu__list">About</li>
-                            <li className="header__mobile-nav__container__menu__list">Project</li>
+                            <li className="header__mobile-nav__container__menu__list"><a href="#about" className="header__mobile-nav__container__menu__list-link">About</a></li>
+                            <li className="header__mobile-nav__container__menu__list"><a href="#project" className="header__mobile-nav__container__menu__list-link">Projects</a></li>
                             <li className="header__mobile-nav__container__menu__list">Contact</li>
                             <li className="header__mobile-nav__container__menu__list">Resume</li>
                         </ul>
