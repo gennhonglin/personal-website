@@ -165,7 +165,7 @@ function About() {
                         </div>
                         <div className="about__skillset__biography__bot__bio">
                             <h4 className="about__skillset__biography__bot__bio-year">2014</h4>
-                            <p className="about__skillset__biography__bot__bio-detail">Attended Capilano University for Bachlor of Science</p>
+                            <p className="about__skillset__biography__bot__bio-detail">Attended Capilano University for Bachelor of Science</p>
                         </div>
                         <div className="about__skillset__biography__bot__bio">
                             <h4 className="about__skillset__biography__bot__bio-year">2016</h4>
@@ -222,7 +222,7 @@ function About() {
                             </div>
                             <div className="about__skillset__hobbies__bot__right__hobby">
                                 <img alt="soccer ball" className="about__skillset__hobbies__bot__right__hobby-icon" src={football}/>
-                                <p className="about__skillset__hobbies__bot__right__hobby-description">Wacthing/Playing Soccer/Football</p>
+                                <p className="about__skillset__hobbies__bot__right__hobby-description">Watching/Playing Soccer/Football</p>
                             </div>
                             <div className="about__skillset__hobbies__bot__right__hobby">
                                 <img alt="volleyball net" className="about__skillset__hobbies__bot__right__hobby-icon" src={volleyball}/>

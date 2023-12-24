@@ -57,8 +57,8 @@ function Projects() {
                                 </div>
                                 <div className="project__container__body__hackathon__project__details__container">
                                     <p className="project__container__body__hackathon__project__details__container-description">
-                                        An app that was developed during a mini hackthon that assigned to us by Brainstation. This app was developed using
-                                        a Pokemon API and pulling the data to develop a quiz with it.
+                                        An app that was developed during a mini hackthon that was assigned to us by Brainstation. This app was developed using
+                                        a Pokemon API and fetching the data to develop a quiz with it.
                                     </p>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ function Projects() {
                                 <div className="project__container__body__hackathon__project__details__container">
                                     <p className="project__container__body__hackathon__project__details__container-description">
                                         A mobile fitness app that was developed in mind for the paraplegic during a hackathon that was assigned to us by Google Employees during our bootcamp. This app
-                                        was developed by myself and my partner Marcelo. The UX/UI design of the app was designed by our lovely UX/UI Makenna and Pauline
+                                        was developed by myself and my partner Marcelo. The UX/UI design of the app was designed by our lovely UX/UI designers Makenna and Pauline
                                         and the data gathered for the app was done by our fantastic Data Analyts Michael and Oyeronke. 
                                     </p>
                                 </div>
