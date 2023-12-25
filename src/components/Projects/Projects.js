@@ -14,7 +14,9 @@ function Projects() {
                 <div className="project__container__body">
                     <div className="project__container__body__project">
                         <h3 className="project__container__body__project-title">Gloomhaven Tracker</h3>
-                        <img alt="Gloomhaven Tracker Site" className="project__container__body__project-img" src={gloomhaven} />
+                        <div className="project__container__body__project__image__container">
+                           <img alt="Gloomhaven Tracker Site" className="project__container__body__project__image__container-img" src={gloomhaven} /> 
+                        </div>
                         <div className="project__container__body__project__details">
                             <div className="project__container__body__project__details__info">
                                 <h4 className="project__container__body__project__details__info-year">2023</h4>
@@ -31,7 +33,9 @@ function Projects() {
 
                     <div className="project__container__body__project">
                         <h3 className="project__container__body__project-title">GHLVolley</h3>
-                        <img alt="GHLVolley Site" className="project__container__body__project-img" src={GHLVolley} />
+                        <div className="project__container__body__project__image__container">
+                            <img alt="GHLVolley Site" className="project__container__body__project__image__container-img" src={GHLVolley} /> 
+                        </div>
                         <div className="project__container__body__project__details">
                             <div className="project__container__body__project__details__info">
                                 <h4 className="project__container__body__project__details__info-year">2022</h4>
@@ -49,7 +53,9 @@ function Projects() {
                     <div className="project__container__body__hackathon">
                         <div className="project__container__body__hackathon__project">
                             <h3 className="project__container__body__hackathon__project-title">Pokemon Quiz</h3>
-                            <img alt="Pokemon Quiz Site" className="project__container__body__hackathon__project-img" src={pokemon} />
+                            <div className="project__container__body__hackathon__project__image__container">
+                                <img alt="Pokemon Quiz Site" className="project__container__body__hackathon__project__image__container-img" src={pokemon} />
+                            </div>
                             <div className="project__container__body__hackathon__project__details">
                                 <div className="project__container__body__hackathon__project__details__info">
                                     <h4 className="project__container__body__hackathon__project__details__info-year">2022</h4>
@@ -65,8 +71,10 @@ function Projects() {
                         </div>
 
                         <div className="project__container__body__hackathon__project">
-                        <h3 className="project__container__body__hackathon__project-title">Fit Haven </h3>
-                            <img alt="Google Hackathon Site" className="project__container__body__hackathon__project-img" src={Google} />
+                            <h3 className="project__container__body__hackathon__project-title">Fit Haven </h3>
+                            <div className="project__container__body__hackathon__project__image__container">
+                                <img alt="Google Hackathon Site" className="project__container__body__hackathon__project__image__container-img" src={Google} />
+                            </div>
                             <div className="project__container__body__hackathon__project__details">
                                 <div className="project__container__body__hackathon__project__details__info">
                                     <h4 className="project__container__body__hackathon__project__details__info-year">2022</h4>
