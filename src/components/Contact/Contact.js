@@ -2,7 +2,7 @@ import "./Contact.scss";
 import linked from "../../assets/icons/linkedin.svg";
 import github from "../../assets/icons/github.svg";
 import tiktok from "../../assets/icons/tiktok.svg";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 
@@ -10,16 +10,22 @@ import emailjs from "@emailjs/browser";
 function Contact() {
 
     const form = useRef();
+    const [sent, setSent] = useState(false);
+
 
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs.sendForm('service_j0ldupz', 'template_p8payad', form.current, 'gc-9izpvf1qU4uEGl')
         .then((result) => {
-            console.log("Message sent!");
+            setSent(true);
         }, (error) => {
             console.log(error.text);
         });
+
+        setSent(true);
+
+        form.current.reset();
     }
 
     return(
@@ -56,7 +62,7 @@ function Contact() {
                         <label className="contact__form-container__form__input-message-label">Your message</label>
                     </div>
 
-                    <button className="contact__form-container__form__submit" type="submit">Send</button>
+                    {sent ? <button className="contact__form-container__form__submit" type="submit">Sent!</button> : <button className="contact__form-container__form__submit" type="submit">Send</button>}
                 </form>
             </div>
 

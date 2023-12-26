@@ -1,13 +1,14 @@
 import "./Header.scss";
 import logo from "../../assets/logo/GHL-Logo.png";
 import resume from "../../assets/resume/Resume.pdf";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 
 function Header() {
     const [hamburger, setHamburger] = useState(false);
     const [menuClick, setMenuClick] = useState(false);
+    const [isHeaderFixed, setIsHeaderFixed] = useState(false);
 
     const updateMenu = () => {
         if(!menuClick) {
@@ -18,6 +19,25 @@ function Header() {
             setMenuClick(false);
         }
     }
+
+    useEffect(() => {
+        function handleScroll() {
+          const scrollPosition = window.scrollY;
+          const distanceFromTop = 0; 
+    
+          if (scrollPosition > distanceFromTop) {
+            setIsHeaderFixed(true);
+          } else {
+            setIsHeaderFixed(false);
+          }
+        }
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
 
     const links = {
         open: {
@@ -30,7 +50,7 @@ function Header() {
 
 
     return(
-        <header className="header">
+        <header className={`header ${isHeaderFixed ? 'fixed' : ''}`}>
             <nav className="header__nav">
                 <div className="header__nav__left">
                     <img alt="logo" src={logo} className="header__nav__left-logo"></img>
