@@ -11,6 +11,7 @@
         background: url("../../assets/images/shooting-star.gif") no-repeat;
         background-size: cover;
         background-position: center;
+        overflow: hidden;
         
 
         &__scatter {
@@ -18,6 +19,10 @@
             width: 100%;
             height: 100%;
             background-color: rgba($color: #000000, $alpha: 0.3);
+
+            @include responsive.tablet {
+                padding: 2.25rem;
+            }
 
             &-char {
                 position: relative;
@@ -41,6 +46,10 @@
                     font-weight: 500;
                     font-size: 1.4375rem;
                     top: 18.75rem;
+
+                    @include responsive.tablet {
+                        font-size: 2.25rem;
+                    }
                 }
             }
         }
@@ -53,55 +62,113 @@
         flex-direction: column;
         padding-bottom: 1.5rem;
 
+        @include responsive.tablet {
+            flex-direction: column;
+            padding: 0 2.25rem;
+            padding-bottom: 2.25rem;
+        }
+
         &-title {
             text-align: center;
             padding: 1.5rem 0 1rem 0;
             font-size: 2rem;
-            line-height: 2rem;
             font-weight: 700;
             color: #F1F0EA;
+
+            @include responsive.tablet {
+                font-size: 3rem;
+                padding: 3rem 0 2.25rem 0;
+            }
         }
 
-        &__image-container {
+
+        &__bot {
             width: 100%;
-            height: 18.75rem;
-            overflow: hidden;
-            border-radius: .625rem;
 
-            &-img {
+            @include responsive.tablet {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 24px;
+            }
+
+            &__image-container {
                 width: 100%;
+                height: 18.75rem;
+                overflow: hidden;
+                border-radius: .625rem;
+    
+                @include responsive.tablet {
+                    width: 50%;
+                    height: 40.625rem;
+                    margin: auto;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+    
+                &-img {
+                    width: 100%;
+                    
+                    @include responsive.tablet {
+                        object-fit: cover;
+                        height: 43.75rem;
+                        border-radius: .625rem;
+                    }
+
+                }
+            }
+    
+            &__description__container {
+                padding-top: 1.5rem;
+    
+                @include responsive.tablet {
+                    width: 50%;
+                    padding-top: 0;
+                }
+    
+                &-title {
+                    color: #F1F0EA;
+                    font-weight: 500;
+                    font-size: 1.5rem;
+
+                    @include responsive.tablet {
+                        font-size: 2.25rem;
+                    }
+                    
+                }
+    
+                &-intro {
+                    padding-top: 1rem;
+                    color: #F1F0EA;
+                    font-size: 1rem;
+
+                    @include responsive.tablet {
+                        font-size: 1rem;
+                        line-height: 1.375rem;
+                        padding-top: 1.625rem;
+                    }
+                }
             }
         }
 
-        &__description__container {
-            padding-top: 1.5rem;
-
-            &-title {
-                color: #F1F0EA;
-                font-weight: 500;
-                font-size: 1.5rem;
-                
-            }
-
-            &-intro {
-                padding-top: 1rem;
-                color: #F1F0EA;
-                font-size: 1rem;
-            }
-        }
+        
 
     }
 
     &__skillset {
-        width: 90%;
+        width: 95%;
         margin: auto;
         padding: 1.5rem 1rem 1rem 1rem;
         background-color: #A1ACBD;
         border-radius: .5rem;
 
-        &__stack {
-            height: 59.375rem;
+        @include responsive.tablet {
+            width: 90%;
+        }
 
+
+        &__stack {
             &__top {
                 margin-bottom: 20px;
                 position: relative;
@@ -109,6 +176,10 @@
                 display: flex;
                 align-items: center;
                 gap: .4375rem;
+
+                @include responsive.tablet {
+                    margin-bottom: 2.25rem;
+                }
 
 
                 &::before {
@@ -118,16 +189,28 @@
                     top: 25px;
                     z-index: -1;
                     border-bottom: 3px solid #171D25;
+
+                    @include responsive.tablet {
+                        top: 1.875rem;
+                    }
                 }
 
                 &-icon {
                     height: 2.1875rem;
+
+                    @include responsive.tablet {
+                        height: 3.125rem;
+                    }
                 }
 
                 &-title {
                     color: #171D25;
                     font-size: 1.875rem;
                     font-weight: 700;
+
+                    @include responsive.tablet {
+                        font-size: 2.25rem;
+                    }
 
                     &::before {
                         content: " ";
@@ -140,6 +223,10 @@
                         left: 0;
                         top: 0;
                         background-color: rgba($color: #A1ACBD, $alpha: 1);
+
+                        @include responsive.tablet {
+                            width: 16.25rem;
+                        }
                       }
     
                 }
@@ -149,11 +236,25 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1.5rem;
+
+                @include responsive.tablet {
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    width: 100%;
+                }
                 
                 &__front-end {
-                    background-color: #3D4756;
+                    background: rgba( 61, 71, 86, 0.85 );
+                    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                    backdrop-filter: blur( 18.5px );
+                    -webkit-backdrop-filter: blur( 18.5px );
+                    border-radius: 10px;
+                    border: 1px solid rgba( 255, 255, 255, 0.18 );
                     padding: .5rem;
-                    border-radius: .625rem;
+                    
+                    @include responsive.tablet {
+                        width: 100%;
+                    }
 
                     &__top {
                         display: flex;
@@ -164,12 +265,20 @@
                         padding-bottom: .5rem;
                         &-icon {
                             height: 1.875rem;
+
+                            @include responsive.tablet {
+                                height: 2.1875rem;
+                            }
                         }
 
                         &-title {
                             font-size: 1.5rem;
                             font-weight: 500;
                             color: #F1F0EA;
+
+                            @include responsive.tablet {
+                                font-size: 1.625rem;
+                            }
                         }
                     }
 
@@ -181,14 +290,26 @@
                             color: #F1F0EA;
                             font-size: 1.125rem;
                             text-align: center;
+
+                            @include responsive.tablet {
+                                font-size: 1.375rem;
+                            }
                         }
                     }
                 }
 
                 &__back-end {
-                    background-color: #3D4756;
+                    background: rgba( 61, 71, 86, 0.85 );
+                    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                    backdrop-filter: blur( 18.5px );
+                    -webkit-backdrop-filter: blur( 18.5px );
+                    border-radius: 10px;
+                    border: 1px solid rgba( 255, 255, 255, 0.18 );
                     padding: .5rem;
-                    border-radius: .625rem;
+
+                    @include responsive.tablet {
+                        width: 100%;
+                    }
 
                     &__top {
                         display: flex;
@@ -199,12 +320,20 @@
                         padding-bottom: .5rem;
                         &-icon {
                             height: 1.875rem;
+
+                            @include responsive.tablet {
+                                height: 2.1875rem;
+                            }
                         }
 
                         &-title {
                             font-size: 1.5rem;
                             font-weight: 500;
                             color: #F1F0EA;
+
+                            @include responsive.tablet {
+                                font-size: 1.625rem;
+                            }
                         }
                     }
 
@@ -216,14 +345,26 @@
                             color: #F1F0EA;
                             font-size: 1.125rem;
                             text-align: center;
+
+                            @include responsive.tablet {
+                                font-size: 1.375rem;
+                            }
                         }
                     }
                 }
 
                 &__others {
-                    background-color: #3D4756;
+                    background: rgba( 61, 71, 86, 0.85 );
+                    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                    backdrop-filter: blur( 18.5px );
+                    -webkit-backdrop-filter: blur( 18.5px );
+                    border-radius: 10px;
+                    border: 1px solid rgba( 255, 255, 255, 0.18 );
                     padding: .5rem;
-                    border-radius: .625rem;
+
+                    @include responsive.tablet {
+                        width: 100%;
+                    }
 
                     &__top {
                         display: flex;
@@ -234,12 +375,20 @@
                         padding-bottom: .5rem;
                         &-icon {
                             height: 1.875rem;
+
+                            @include responsive.tablet {
+                                height: 2.1875rem;
+                            }
                         }
 
                         &-title {
                             font-size: 1.5rem;
                             font-weight: 500;
                             color: #F1F0EA;
+
+                            @include responsive.tablet {
+                                font-size: 1.625rem;
+                            }
                         }
                     }
 
@@ -251,6 +400,10 @@
                             color: #F1F0EA;
                             font-size: 1.125rem;
                             text-align: center;
+
+                            @include responsive.tablet {
+                                font-size: 1.375rem;
+                            }
                         }
                     }
                 }

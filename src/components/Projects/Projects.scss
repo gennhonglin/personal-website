@@ -1,9 +1,16 @@
+@use "../../Styles/mixins" as responsive;
+
 .project{
     width: 100%;
     &__container {
         padding-top: 1.5rem;
         display: flex;
         flex-direction: column;
+
+        @include responsive.tablet {
+            padding: 3rem 0 2.25rem 0;
+        }
+
         &__header{
             padding-bottom: 1rem;
             &-title {
@@ -11,13 +18,23 @@
                 color: #F1F0EA;
                 text-align: center;
                 font-weight: 700;
+
+                @include responsive.tablet {
+                    font-size: 3rem;
+                }
             }
         }
+
+        
 
         &__body {
             padding: 1rem;
             display: flex;
             flex-direction: column;
+
+            @include responsive.tablet {
+                padding: 2.25rem;
+            }
 
             &__project {
                 display: flex;
@@ -28,6 +45,10 @@
                     font-size: 1.5rem;
                     text-align: center;
                     padding-bottom: 1rem;
+
+                    @include responsive.tablet {
+                        font-size: 2rem;
+                    }
                 }
 
                 &__image__container {
@@ -35,10 +56,21 @@
                     height: 13.75rem;
                     overflow: hidden;
                     border-radius: .5rem;
+
+                    @include responsive.tablet {
+                        height: 100%;
+                    }
+
                     &-img {
                         width: 100%;
-                        height: 13.75rem;
-                        transition: transform 0.5s ease; 
+                        height: 100%;
+                        transition: transform 0.5s ease;
+
+                        @include responsive.tablet {
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: .625rem;
+                        }
                         
                         &:hover {
                             transform: scale(1.2);
@@ -53,10 +85,15 @@
                     flex-direction: column;
                     gap: .3125rem;
 
+                    @include responsive.tablet {
+                        gap: 1rem;
+                    }
+
                     &__info {
                         display: flex;
                         justify-content: flex-start;
                         gap: .625rem;
+
                         &-year {
                             color: #bad3fd;
                             font-size: 1rem;
@@ -65,6 +102,12 @@
                             text-align: center;
                             border-radius: .5rem;
                             padding: .3125rem;
+
+                            @include responsive.tablet {
+                                font-size: 1.25rem;
+                                width: 4.375rem;
+                            }
+
                         }
     
                         &-tech__stack {
@@ -75,33 +118,71 @@
                             text-align: center;
                             border-radius: .5rem;
                             padding: .3125rem;
+
+                            @include responsive.tablet {
+                                font-size: 1.25rem;
+                                width: 11.25rem;
+                            }
                         }
                     }
 
                     &__container {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .625rem;
                         padding-bottom: 1.5rem;
+
+                        @include responsive.tablet {
+                            padding-bottom: 2.25rem;
+                        }
 
                         &-description {
                             color: #F1F0EA;
-                            font-size: .875rem
+                            font-size: .875rem;
+
+                            @include responsive.tablet {
+                                font-size: 1rem;
+                            }
                         }
                     }
                 }
             }
 
             &__hackathon {
+                display: flex;
+                flex-direction: column;
+
+                @include responsive.tablet {
+                    flex-direction: row;
+                    gap: 2.25rem;
+                }
+
                 &__project {
                     display: flex;
                     flex-direction: column;
+
+                    @include responsive.tablet {
+                        &.pokemon {
+                            margin-bottom: 15.625rem;
+                        }
+    
+                        &.fithaven {
+                            margin-top: 15.625rem;
+                        }
+
+                    }
+
+                    @include responsive.tablet {
+                        width: 50%;
+                    }
+
 
                     &-title {
                         color: #F1F0EA;
                         font-size: 1.5rem;
                         text-align: center;
                         padding-bottom: 1rem;
+
+                        @include responsive.tablet {
+                            font-size: 2rem;
+                        }
                     }
     
                     &__image__container {
@@ -109,10 +190,19 @@
                         height: 13.75rem;
                         overflow: hidden;
                         border-radius: .5rem;
+
+                        @include responsive.tablet {
+                            height: 100%;
+                        }
+
                         &-img {
                             width: 100%;
                             height: 13.75rem;
                             transition: transform 0.5s ease; 
+
+                            @include responsive.tablet {
+                                height: 100%;
+                            }
                             
                             &:hover {
                                 transform: scale(1.2);
@@ -138,6 +228,11 @@
                                 text-align: center;
                                 border-radius: .5rem;
                                 padding: .3125rem;
+
+                                @include responsive.tablet {
+                                    font-size: 1.25rem;
+                                    width: 4.375rem;
+                                }
                             }
         
                             &-tech__stack {
@@ -148,6 +243,11 @@
                                 text-align: center;
                                 border-radius: .5rem;
                                 padding: .3125rem;
+
+                                @include responsive.tablet {
+                                    font-size: 1.25rem;
+                                    width: 11.25rem;
+                                }
                             }
                         }
     
@@ -156,10 +256,18 @@
                             flex-direction: column;
                             gap: .625rem;
                             padding-bottom: 1.5rem;
+
+                            @include responsive.tablet {
+                                padding-bottom: 2.25rem;
+                            }
     
                             &-description {
                                 color: #F1F0EA;
-                                font-size: .875rem
+                                font-size: .875rem;
+
+                                @include responsive.tablet {
+                                    font-size: 16px;
+                                }
                             }
                         }
                     }

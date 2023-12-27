@@ -51,7 +51,7 @@ function Projects() {
                     </div>
 
                     <div className="project__container__body__hackathon">
-                        <div className="project__container__body__hackathon__project">
+                        <div className="project__container__body__hackathon__project pokemon">
                             <h3 className="project__container__body__hackathon__project-title">Pokemon Quiz</h3>
                             <div className="project__container__body__hackathon__project__image__container">
                                 <img alt="Pokemon Quiz Site" className="project__container__body__hackathon__project__image__container-img" src={pokemon} />
@@ -70,7 +70,7 @@ function Projects() {
                             </div>
                         </div>
 
-                        <div className="project__container__body__hackathon__project">
+                        <div className="project__container__body__hackathon__project fithaven">
                             <h3 className="project__container__body__hackathon__project-title">Fit Haven </h3>
                             <div className="project__container__body__hackathon__project__image__container">
                                 <img alt="Google Hackathon Site" className="project__container__body__hackathon__project__image__container-img" src={Google} />

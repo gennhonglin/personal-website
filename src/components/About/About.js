@@ -2,32 +2,69 @@ import "./About.scss";
 import { motion } from "framer-motion";
 import Profile from "../../assets/images/profile-picture.jpg";
 import tag from "../../assets/icons/code-slash-outline.svg";
-import console from "../../assets/icons/terminal-outline.svg";
+import terminal from "../../assets/icons/terminal-outline.svg";
 import server from "../../assets/icons/server-outline.svg";
 import other from "../../assets/icons/other.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
 function About() {
     const [animationComplete, setAnimationComplete] = useState(false);
     const text = "Hey! I'm Genn-Hong Lin and I'm a Junior Full Stack Web Developer based in Vancouver, B.C";
+    const [initialX, setInitialX] = useState(300);
+    const [initialY, setInitialY] = useState(300);
+    const [font, setFont] = useState('23px');
+    const [animationKey, setAnimationKey] = useState(0);
 
+    const handleResize = () => {
+        const newScreenWidth = window.innerWidth;
+
+        // Adjust initial x, y, and font size based on screen width
+        if (newScreenWidth < 768) {
+            setInitialX(newScreenWidth);
+            setInitialY(250);
+            setFont('1.4375rem');
+        } else if (newScreenWidth >= 768 && newScreenWidth < 1280) {
+            setInitialX(800);
+            setInitialY(200);
+            setFont('2.25rem');
+        } else if(newScreenWidth >= 1280){
+            setInitialX(newScreenWidth);
+            setInitialY(200);
+            setFont('3rem');
+        }
+
+        setAnimationKey((prevKey) => prevKey + 1);
+
+    };
+
+    useEffect(() => {
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []); 
 
     const charVariants = {
         initial: (index) => ({
-          rotate: Math.random() * 360,
-          x: Math.random() * 100,
-          y: Math.random() * 380 + 60,
-          fontSize: "1px"
+            rotate: Math.random() * 360,
+            x: Math.random() * initialX,
+            y: Math.random() * initialY + 60,
+            fontSize: '1px',
         }), 
-        
+
         animate: {
             rotate: 0,
             x: 0,
             y: 300,
             transition: { delay: 1, duration: 2 },
-            fontSize: "23px"
+            fontSize: font, 
         }
     };
 
@@ -41,7 +78,7 @@ function About() {
     return(
         <section className="about">
             {/* Shooting star introduction section */}
-            <motion.div className="about__hero">
+            <motion.div key={animationKey} className="about__hero">
                 <div className="about__hero__scatter">
                     {textWithNbsp.split('').map((char, index, array) => (
                         <motion.span
@@ -62,28 +99,31 @@ function About() {
             </motion.div>
             <div className="about__details" id="about">
                 <h2 className="about__details-title">ABOUT ME</h2>
-                <div className="about__details__image-container">
-                    <img alt="profile" src={Profile} className="about__details__image-container-img"></img>
-                </div>
-                <div className="about__details__description__container">
-                    <h3 className="about__details__description__container-title">Who am I in a nutshell?</h3>
 
-                    <p className="about__details__description__container-intro">
-                     My coding journey ignited during my third year at Capilano University, where I initially pursued sciences.
-                     In my quest for an elective, a friend suggested Computer Science 101, and little did I know, that moment would be the spark for my passion in coding, problem-solving, and witnessing the tangible results of my efforts.
-                        <br/>
-                        <br/>
-                     I pursued an Associate in Computer Science Degree at Langara College.
-                     Over the years of immersing myself in the field of Computer Science, I discovered that my greatest progress came from hands-on experience rather than theoretical learning alone.
-                     This realization prompted me to make a proactive choice, leading me to opt for a specialized Bootcamp to elevate and refine my skills.
-                     Now equipped with a Diploma in Web Development/Software Engineering, I'm on the lookout for independent projects or full-time positions.
-                        <br/>
-                        <br/>
-                     During the day, you'll find me immersed in passion projects.
-                     Whether it's developing a board game tracking website for my friends or a volleyball website to assist newcomers in enhancing their skills, I'm always looking to create something exciting.
-                     When I'm not deep in coding or designing, you can catch me practicing or competing in volleyball leagues. When volleyball isn't on the agenda, you'll likely find me in front of my computer,
-                     either gaming with friends, indulging in some anime, or spending time with my dogs.  
-                    </p>
+                <div className="about__details__bot">
+                    <div className="about__details__bot__image-container">
+                        <img alt="profile" src={Profile} className="about__details__bot__image-container-img"></img>
+                    </div>
+                    <div className="about__details__bot__description__container">
+                        <h3 className="about__details__bot__description__container-title">Who am I in a nutshell?</h3>
+
+                        <p className="about__details__bot__description__container-intro">
+                        My coding journey ignited during my third year at Capilano University, where I initially pursued sciences.
+                        In my quest for an elective, a friend suggested Computer Science 101, and little did I know, that moment would be the spark for my passion in coding, problem-solving, and witnessing the tangible results of my efforts.
+                            <br/>
+                            <br/>
+                        I pursued an Associate in Computer Science Degree at Langara College.
+                        Over the years of immersing myself in the field of Computer Science, I discovered that my greatest progress came from hands-on experience rather than theoretical learning alone.
+                        This realization prompted me to make a proactive choice, leading me to opt for a specialized Bootcamp to elevate and refine my skills.
+                        Now equipped with a Diploma in Web Development/Software Engineering, I'm on the lookout for independent projects or full-time positions.
+                            <br/>
+                            <br/>
+                        During the day, you'll find me immersed in passion projects.
+                        Whether it's developing a board game tracking website for my friends or a volleyball website to assist newcomers in enhancing their skills, I'm always looking to create something exciting.
+                        When I'm not deep in coding or designing, you can catch me practicing or competing in volleyball leagues. When volleyball isn't on the agenda, you'll likely find me in front of my computer,
+                        either gaming with friends, indulging in some anime, or spending time with my dogs.  
+                        </p>
+                    </div>
                 </div>
             </div>
             
@@ -97,7 +137,7 @@ function About() {
                         {/* Front-End Development */}
                         <div className="about__skillset__stack__bot__front-end">
                             <div className="about__skillset__stack__bot__front-end__top">
-                                <img alt="front-end" src={console} className="about__skillset__stack__bot__front-end__top-icon"/>
+                                <img alt="front-end" src={terminal} className="about__skillset__stack__bot__front-end__top-icon"/>
                                 <h3 className="about__skillset__stack__bot__front-end__top-title">Front-End</h3>
                             </div>
 

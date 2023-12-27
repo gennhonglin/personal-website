@@ -27,7 +27,7 @@
         &__left {
             display: flex;
             align-items: center;
-            width: 50%;
+            width: 60%;
             justify-content: left;
             gap: .3125rem;
             &-logo {
@@ -41,13 +41,13 @@
             &-title {
                 margin: 0;
                 height: 2.5rem;
-                font-size: 1rem;
+                font-size: 1.125rem;
                 font-weight: 700;
                 color: #F1F0EA;
                 margin-top: .625rem;
 
                 @include responsive.tablet {
-                    font-size: 1.125rem;
+                    font-size: 1.25rem;
                 }
             }
         }

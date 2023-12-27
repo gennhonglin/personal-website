@@ -44,8 +44,6 @@ function Contact() {
                     Feel free to reach out if you have any exciting opportunities or if you're looking for a dedicated developer for your projects!
                     </p>
 
-
-
                     {/* Name */}
                     <div className="contact__form-container__form__input-container">
                         <input className="contact__form-container__form__input-container-input" type="text" name="to_name" required></input>
@@ -64,30 +62,32 @@ function Contact() {
 
                     {sent ? <button className="contact__form-container__form__submit" type="submit">Sent!</button> : <button className="contact__form-container__form__submit" type="submit">Send</button>}
                 </form>
-            </div>
 
-            <div className="contact__email">
-                <h3 className="contact__email-title">Contact Information</h3>
-                <a className="contact__email-email" href="mailto: gennhonglin@gmail.com">gennhonglin@gmail.com</a>
-            </div>
+                <div className="contact__form-container__details">
+                    <div className="contact__form-container__details__email">
+                        <h3 className="contact__form-container__details__email-title">Contact Information</h3>
+                        <a className="contact__form-container__details__email-email" href="mailto: gennhonglin@gmail.com">gennhonglin@gmail.com</a>
+                    </div>
 
-            <div className="contact__web">
-                <h3 className="contact__web-title">On the Web</h3>
-                <div className="contact__web__links">
-                    <a className="contact__web__links__ref" href="https://www.linkedin.com/in/gennhong-lin/">
-                        <img alt="linkedin-icon" className="contact__web__links__ref-img" src={linked}/>
-                        <span className="contact__web__links__ref-website">LinkedIn</span>
-                    </a>
+                    <div className="contact__form-container__details__web">
+                        <h3 className="contact__form-container__details__web-title">On the Web</h3>
+                        <div className="contact__form-container__details__web__links">
+                            <a className="contact__form-container__details__web__links__ref" href="https://www.linkedin.com/in/gennhong-lin/">
+                                <img alt="linkedin-icon" className="contact__form-container__details__web__links__ref-img" src={linked}/>
+                                <span className="contact__form-container__details__web__links__ref-website">LinkedIn</span>
+                            </a>
 
-                    <a className="contact__web__links__ref" href="https://github.com/gennhonglin">
-                        <img alt="github-icon" className="contact__web__links__ref-img" src={github}/>
-                        <span className="contact__web__links__ref-website">Github</span>
-                    </a>
+                            <a className="contact__form-container__details__web__links__ref" href="https://github.com/gennhonglin">
+                                <img alt="github-icon" className="contact__form-container__details__web__links__ref-img" src={github}/>
+                                <span className="contact__form-container__details__web__links__ref-website">Github</span>
+                            </a>
 
-                    <a className="contact__web__links__ref" href="https://www.tiktok.com/@ghlvolley">
-                        <img alt="tiktok-icon" className="contact__web__links__ref-img" src={tiktok}/>
-                        <span className="contact__web__links__ref-website">Tiktok</span>
-                    </a>
+                            <a className="contact__form-container__details__web__links__ref" href="https://www.tiktok.com/@ghlvolley">
+                                <img alt="tiktok-icon" className="contact__form-container__details__web__links__ref-img" src={tiktok}/>
+                                <span className="contact__form-container__details__web__links__ref-website">Tiktok</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

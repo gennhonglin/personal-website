@@ -1,3 +1,5 @@
+@use "../../Styles/mixins" as responsive;
+
 .footer {
     padding: 1rem;
     display: flex;
@@ -8,12 +10,20 @@
         font-size: 1rem;
         font-weight: 500;
         color: #F1F0EA;
+
+        @include responsive.tablet {
+            font-size: 1.25rem;
+        }
     }
 
     &__detail {
         font-size: .875rem;
         color: #F1F0EA;
         text-align: center;
+
+        @include responsive.tablet {
+            font-size: 1.125rem;
+        }
     }
     
 }
