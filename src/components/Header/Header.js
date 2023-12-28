@@ -65,7 +65,7 @@ function Header({ handleLinkClick }) {
                             <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('about', e)}>About</a></li>
                             <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('project', e)}>Project</a></li>
                             <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('contact', e)}>Contact</a></li>
-                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="../../../public/Resume.pdf" target="_blank">Resume</a></li>
+                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="/Resume.pdf" target="_blank">Resume</a></li>
                         </ul>
                     </div>
 
