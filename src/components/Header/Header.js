@@ -121,7 +121,7 @@ function Header({ handleLinkClick }) {
                             <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('about', e)}>About</a></motion.li>
                             <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('project', e)}>Projects</a></motion.li>
                             <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('contact', e)}>Contact</a></motion.li>
-                            <motion.li className="header__nav__container__menu__list" variants={links}><a href="/Resume.pdf" target="_blank" className="header__nav__container__menu__list-link">Resume</a></motion.li>
+                            <motion.li className="header__nav__container__menu__list" variants={links}><a href={'/Resume.pdf'} target="_blank" className="header__nav__container__menu__list-link">Resume</a></motion.li>
                         </motion.ul>
                 </motion.div>
             </nav>
