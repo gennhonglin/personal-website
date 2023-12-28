@@ -65,7 +65,7 @@ function Header({ handleLinkClick }) {
                             <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('about', e)}>About</a></li>
                             <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('project', e)}>Project</a></li>
                             <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('contact', e)}>Contact</a></li>
-                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="/Resume.pdf" target="_blank">Resume</a></li>
+                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="../../../public/Resume.pdf" target="_blank">Resume</a></li>
                         </ul>
                     </div>
 
@@ -121,7 +121,7 @@ function Header({ handleLinkClick }) {
                             <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('about', e)}>About</a></motion.li>
                             <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('project', e)}>Projects</a></motion.li>
                             <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('contact', e)}>Contact</a></motion.li>
-                            <motion.li className="header__nav__container__menu__list" variants={links}><a href={'/Resume.pdf'} rel="noopener noreferrer"> target="_blank" className="header__nav__container__menu__list-link">Resume</a></motion.li>
+                            <motion.li className="header__nav__container__menu__list" variants={links}><a href="../../" rel="noopener noreferrer"> target="_blank" className="header__nav__container__menu__list-link">Resume</a></motion.li>
                         </motion.ul>
                 </motion.div>
             </nav>
