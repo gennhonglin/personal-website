@@ -12,7 +12,7 @@ function Projects() {
                     <h2 className="project__container__header-title">PROJECTS</h2>
                 </header>
                 <div className="project__container__body">
-                    <div className="project__container__body__project">
+                    <div className="project__container__body__project gloomhaven">
                         <h3 className="project__container__body__project-title">Gloomhaven Tracker</h3>
                         <div className="project__container__body__project__image__container">
                            <img alt="Gloomhaven Tracker Site" className="project__container__body__project__image__container-img" src={gloomhaven} /> 
@@ -24,14 +24,14 @@ function Projects() {
                             </div>
                             <div className="project__container__body__project__details__container">
                                 <p className="project__container__body__project__details__container-description">
-                                    An app that keeps track of all the data in the board game gloomhaven without having to
-                                    physically keep track of it.
+                                An innovative app designed to seamlessly manage all aspects of the Gloomhaven board game, 
+                                eliminating the need for manual tracking by providing a digital solution for efficient data management.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="project__container__body__project">
+                    <div className="project__container__body__project ghlvolley">
                         <h3 className="project__container__body__project-title">GHLVolley</h3>
                         <div className="project__container__body__project__image__container">
                             <img alt="GHLVolley Site" className="project__container__body__project__image__container-img" src={GHLVolley} /> 
@@ -43,8 +43,8 @@ function Projects() {
                             </div>
                             <div className="project__container__body__project__details__container">
                                 <p className="project__container__body__project__details__container-description">
-                                    An app that was designed for newer volleyball players to find resources to improve their gameplay and to
-                                    find local drop in's to play and practice at.
+                                An app tailored for volleyball enthusiasts, providing a curated platform to enhance their gameplay through valuable resources
+                                and discover local drop-in sessions for practice and play.
                                 </p>
                             </div>
                         </div>
@@ -63,8 +63,8 @@ function Projects() {
                                 </div>
                                 <div className="project__container__body__hackathon__project__details__container">
                                     <p className="project__container__body__hackathon__project__details__container-description">
-                                        An app that was developed during a mini hackthon that was assigned to us by Brainstation. This app was developed using
-                                        a Pokemon API and fetching the data to develop a quiz with it.
+                                    Created during a mini-hackathon assigned by Brainstation,
+                                    this app utilizes a Pokemon API, fetching data to craft an engaging quiz experience.
                                     </p>
                                 </div>
                             </div>
@@ -82,9 +82,9 @@ function Projects() {
                                 </div>
                                 <div className="project__container__body__hackathon__project__details__container">
                                     <p className="project__container__body__hackathon__project__details__container-description">
-                                        A mobile fitness app that was developed in mind for the paraplegic during a hackathon that was assigned to us by Google Employees during our bootcamp. This app
-                                        was developed by myself and my partner Marcelo. The UX/UI design of the app was designed by our lovely UX/UI designers Makenna and Pauline
-                                        and the data gathered for the app was done by our fantastic Data Analyts Michael and Oyeronke. 
+                                    My team and I created a mobile fitness app with a focus on accessibility for individuals with paraplegia during a hackathon organized by Google employees as part of our bootcamp.
+                                    The development work was led by myself and my partner, Marcelo. The app's intuitive UX/UI design was crafted by our talented designers, Makenna and Pauline.
+                                    Additionally, the valuable data needed for the app was meticulously gathered by our skilled data analysts, Michael and Oyeronke.
                                     </p>
                                 </div>
                             </div>

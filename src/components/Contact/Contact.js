@@ -45,14 +45,17 @@ function Contact() {
                     </p>
 
                     {/* Name */}
-                    <div className="contact__form-container__form__input-container">
-                        <input className="contact__form-container__form__input-container-input" type="text" name="to_name" required></input>
-                        <label className="contact__form-container__form__input-container-label">Your name</label>
-                    </div>
-                    {/* Email */}
-                    <div className="contact__form-container__form__input-container">
-                        <input className="contact__form-container__form__input-container-input" type="email" name="from_name" required></input>
-                        <label className="contact__form-container__form__input-container-label">Your Email</label>
+
+                    <div className="contact__form-container__form__data">
+                        <div className="contact__form-container__form__data__input-container">
+                            <input className="contact__form-container__form__data__input-container-input" type="text" name="to_name" required></input>
+                            <label className="contact__form-container__form__data__input-container-label">Your name</label>
+                        </div>
+                        {/* Email */}
+                        <div className="contact__form-container__form__data__input-container">
+                            <input className="contact__form-container__form__data__input-container-input" type="email" name="from_name" required></input>
+                            <label className="contact__form-container__form__data__input-container-label">Your Email</label>
+                        </div>
                     </div>
                     {/* Message */}
                     <div className="contact__form-container__form__input-message">

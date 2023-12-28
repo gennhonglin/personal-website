@@ -11,9 +11,10 @@ import { useEffect, useState } from "react";
 
 function About() {
     const [animationComplete, setAnimationComplete] = useState(false);
-    const text = "Hey! I'm Genn-Hong Lin and I'm a Junior Full Stack Web Developer based in Vancouver, B.C";
+    const text = "Hey! I'm Genn-Hong Lin and I'm a Junior Full Stack Web Developer based in Vancouver, B.C.";
     const [initialX, setInitialX] = useState(300);
     const [initialY, setInitialY] = useState(300);
+    const [finalY, setFinalY] = useState(400);
     const [font, setFont] = useState('23px');
     const [animationKey, setAnimationKey] = useState(0);
 
@@ -25,14 +26,17 @@ function About() {
             setInitialX(newScreenWidth);
             setInitialY(250);
             setFont('1.4375rem');
+            setFinalY(300);
         } else if (newScreenWidth >= 768 && newScreenWidth < 1280) {
             setInitialX(800);
             setInitialY(200);
             setFont('2.25rem');
+            setFinalY(300);
         } else if(newScreenWidth >= 1280){
             setInitialX(newScreenWidth);
             setInitialY(200);
-            setFont('3rem');
+            setFont('4rem');
+            setFinalY(350);
         }
 
         setAnimationKey((prevKey) => prevKey + 1);
@@ -62,7 +66,7 @@ function About() {
         animate: {
             rotate: 0,
             x: 0,
-            y: 300,
+            y: finalY,
             transition: { delay: 1, duration: 2 },
             fontSize: font, 
         }
@@ -114,7 +118,7 @@ function About() {
                             <br/>
                         I pursued an Associate in Computer Science Degree at Langara College.
                         Over the years of immersing myself in the field of Computer Science, I discovered that my greatest progress came from hands-on experience rather than theoretical learning alone.
-                        This realization prompted me to make a proactive choice, leading me to opt for a specialized Bootcamp to elevate and refine my skills.
+                        This realization prompted me to make a proactive choice, leading me to pursue a specialized Bootcamp to elevate and refine my skills.
                         Now equipped with a Diploma in Web Development/Software Engineering, I'm on the lookout for independent projects or full-time positions.
                             <br/>
                             <br/>

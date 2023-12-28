@@ -12,16 +12,24 @@
         background-size: cover;
         background-position: center;
         overflow: hidden;
+
+        @include responsive.desktop {
+            height: 56.25rem;
+        }
         
 
         &__scatter {
-            padding: .5rem;
+            padding: 0.5rem;
             width: 100%;
             height: 100%;
             background-color: rgba($color: #000000, $alpha: 0.3);
 
             @include responsive.tablet {
                 padding: 2.25rem;
+            }
+
+            @include responsive.desktop {
+                padding: 0 5rem;
             }
 
             &-char {
@@ -50,6 +58,11 @@
                     @include responsive.tablet {
                         font-size: 2.25rem;
                     }
+
+                    @include responsive.desktop {
+                        font-size: 4rem;
+                        top: 21.875rem;
+                    }
                 }
             }
         }
@@ -64,8 +77,13 @@
 
         @include responsive.tablet {
             flex-direction: column;
-            padding: 0 2.25rem;
+            padding: 0 auto;
             padding-bottom: 2.25rem;
+        }
+
+        @include responsive.desktop {
+            padding: 0 5rem;
+            padding-bottom: 3rem;
         }
 
         &-title {
@@ -79,6 +97,10 @@
                 font-size: 3rem;
                 padding: 3rem 0 2.25rem 0;
             }
+
+            @include responsive.desktop {
+                font-size: 4rem;
+            }
         }
 
 
@@ -87,8 +109,11 @@
 
             @include responsive.tablet {
                 display: flex;
-                justify-content: space-evenly;
                 gap: 24px;
+            }
+
+            @include responsive.desktop {
+                gap: 1.25rem;
             }
 
             &__image-container {
@@ -106,6 +131,12 @@
                     align-items: center;
                     justify-content: center;
                 }
+
+                @include responsive.desktop {
+                    width: 50%;
+                    height: 43.75rem;
+                    margin-top: .625rem;
+                }
     
                 &-img {
                     width: 100%;
@@ -114,6 +145,13 @@
                         object-fit: cover;
                         height: 43.75rem;
                         border-radius: .625rem;
+                    }
+
+                    @include responsive.desktop {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 62.5rem;
+                        margin-top: 12.5rem;
                     }
 
                 }
@@ -125,6 +163,10 @@
                 @include responsive.tablet {
                     width: 50%;
                     padding-top: 0;
+                }
+
+                @include responsive.desktop {
+                    width: 50%;
                 }
     
                 &-title {
@@ -146,7 +188,12 @@
                     @include responsive.tablet {
                         font-size: 1rem;
                         line-height: 1.375rem;
-                        padding-top: 1.625rem;
+                        padding-top: 1.25rem;
+                    }
+
+                    @include responsive.desktop {
+                        font-size: 1.375rem;
+                        line-height: 2rem;
                     }
                 }
             }
@@ -165,6 +212,11 @@
 
         @include responsive.tablet {
             width: 90%;
+            padding-bottom: 3.75rem;
+        }
+
+        @include responsive.desktop {
+            padding-bottom: 3.75rem;
         }
 
 
@@ -193,6 +245,10 @@
                     @include responsive.tablet {
                         top: 1.875rem;
                     }
+
+                    @include responsive.desktop {
+                        top: 2.3125rem;
+                    }
                 }
 
                 &-icon {
@@ -200,6 +256,10 @@
 
                     @include responsive.tablet {
                         height: 3.125rem;
+                    }
+
+                    @include responsive.desktop {
+                        height: 3.75rem;
                     }
                 }
 
@@ -210,6 +270,10 @@
 
                     @include responsive.tablet {
                         font-size: 2.25rem;
+                    }
+
+                    @include responsive.desktop {
+                        font-size: 3rem;
                     }
 
                     &::before {
@@ -227,6 +291,10 @@
                         @include responsive.tablet {
                             width: 16.25rem;
                         }
+
+                        @include responsive.desktop {
+                            width: 20.625rem;
+                        }
                       }
     
                 }
@@ -239,8 +307,14 @@
 
                 @include responsive.tablet {
                     flex-direction: row;
-                    justify-content: space-evenly;
+                    justify-content: space-around;
                     width: 100%;
+                }
+
+                @include responsive.desktop {
+                    justify-content: space-around;
+                    gap: 2.25rem;
+                    padding: 0 5rem;
                 }
                 
                 &__front-end {
@@ -256,6 +330,10 @@
                         width: 100%;
                     }
 
+                    @include responsive.tablet {
+                        width: 100%;
+                    }
+
                     &__top {
                         display: flex;
                         gap: .3125rem;
@@ -263,11 +341,19 @@
                         align-items: center;
                         border-bottom: 1px solid white;
                         padding-bottom: .5rem;
+
+                        @include responsive.desktop {
+                            gap: .8125rem;
+                        }
                         &-icon {
                             height: 1.875rem;
 
                             @include responsive.tablet {
                                 height: 2.1875rem;
+                            }
+
+                            @include responsive.desktop {
+                                height: 2.5rem;
                             }
                         }
 
@@ -278,6 +364,10 @@
 
                             @include responsive.tablet {
                                 font-size: 1.625rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 2.25rem;
                             }
                         }
                     }
@@ -293,6 +383,10 @@
 
                             @include responsive.tablet {
                                 font-size: 1.375rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 1.75rem;
                             }
                         }
                     }
@@ -311,6 +405,10 @@
                         width: 100%;
                     }
 
+                    @include responsive.tablet {
+                        width: 100%;
+                    }
+
                     &__top {
                         display: flex;
                         gap: .3125rem;
@@ -318,11 +416,20 @@
                         align-items: center;
                         border-bottom: 1px solid white;
                         padding-bottom: .5rem;
+
+                        @include responsive.desktop {
+                            gap: .8125rem;
+                        }
+
                         &-icon {
                             height: 1.875rem;
 
                             @include responsive.tablet {
                                 height: 2.1875rem;
+                            }
+
+                            @include responsive.desktop {
+                                height: 2.5rem;
                             }
                         }
 
@@ -333,6 +440,10 @@
 
                             @include responsive.tablet {
                                 font-size: 1.625rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 2.25rem;
                             }
                         }
                     }
@@ -348,6 +459,10 @@
 
                             @include responsive.tablet {
                                 font-size: 1.375rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 1.75rem;
                             }
                         }
                     }
@@ -363,6 +478,10 @@
                     padding: .5rem;
 
                     @include responsive.tablet {
+                         width: 100%;
+                    }
+
+                    @include responsive.tablet {
                         width: 100%;
                     }
 
@@ -373,11 +492,19 @@
                         align-items: center;
                         border-bottom: 1px solid white;
                         padding-bottom: .5rem;
+
+                        @include responsive.desktop {
+                            gap: .8125rem;
+                        }
                         &-icon {
                             height: 1.875rem;
 
                             @include responsive.tablet {
                                 height: 2.1875rem;
+                            }
+
+                            @include responsive.desktop {
+                                height: 2.5rem;
                             }
                         }
 
@@ -388,6 +515,10 @@
 
                             @include responsive.tablet {
                                 font-size: 1.625rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 2.25rem;
                             }
                         }
                     }
@@ -403,6 +534,10 @@
 
                             @include responsive.tablet {
                                 font-size: 1.375rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 1.75rem;
                             }
                         }
                     }

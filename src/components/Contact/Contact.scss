@@ -10,6 +10,10 @@
         padding-top: 0;
     }
 
+    @include responsive.desktop {
+        padding: 0 5rem;
+    }
+
     &__header {
         padding-top: .5rem;
 
@@ -26,6 +30,10 @@
             @include responsive.tablet {
                 font-size: 3rem;
             }
+
+            @include responsive.desktop {
+                font-size: 4rem;
+            }
         }
     }
 
@@ -38,6 +46,10 @@
             flex-direction: row;
             gap: 2.25rem;
         }
+
+        @include responsive.desktop {
+            gap: 4rem;
+        }
      
         &__form {
             padding-top: 1rem;
@@ -49,6 +61,7 @@
                 width: 65%;
             }
 
+
             &-title {
                 font-size: 1.25rem;
                 font-weight: 500;
@@ -56,6 +69,10 @@
 
                 @include responsive.tablet {
                     font-size: 2rem;
+                }
+                
+                @include responsive.desktop {
+                    font-size: 2.25rem;
                 }
             }
     
@@ -67,42 +84,67 @@
                 @include responsive.tablet {
                     font-size: 1rem;
                 }
+
+                @include responsive.desktop {
+                    font-size: 1.375rem;
+                    padding: 1.5rem 0;
+                }
             }
 
-            &__input-container {
-                position: relative;
-                width: 100%;
-                margin-bottom: 1.25rem;
+            &__data {
+                display: flex;
+                flex-direction: column;
 
-                &-input {
+                @include responsive.desktop {
+                    flex-direction: row;
+                    gap: 1rem;
+                }
+
+                &__input-container {
                     position: relative;
                     width: 100%;
-                    padding: .625rem 0;
-                    background: transparent;
-                    border: none;
-                    border-bottom: 2px solid #F1F0EA;
-                    outline: none;
-                    color: #F1F0EA;
-                    font-size: 1rem;
-                    letter-spacing: .0313rem;
-                }
-
-                &-input:valid ~ &-label,
-                &-input:focus ~ &-label {
-                    font-size: .875rem;
-                    transform: translateY(-1.375rem);
-                }
-
-                &-label {
-                    position: absolute;
-                    left: 0;
-                    padding: .625rem 0;
-                    pointer-events: none;
-                    color: #F1F0EA;
-                    transition: 0.5s;
-                    font-size: 1.125rem;
+                    margin-bottom: 1.25rem;
+                    
+    
+                    &-input {
+                        position: relative;
+                        width: 100%;
+                        padding: .625rem 0;
+                        background: transparent;
+                        border: none;
+                        border-bottom: 2px solid #F1F0EA;
+                        outline: none;
+                        color: #F1F0EA;
+                        font-size: 1rem;
+                        letter-spacing: .0313rem;
+                    }
+    
+                    &-input:valid ~ &-label,
+                    &-input:focus ~ &-label {
+                        font-size: .875rem;
+                        transform: translateY(-1.375rem);
+    
+                        @include responsive.desktop {
+                            font-size: 1rem;
+                        }
+                    }
+    
+                    &-label {
+                        position: absolute;
+                        left: 0;
+                        padding: .625rem 0;
+                        pointer-events: none;
+                        color: #F1F0EA;
+                        transition: 0.5s;
+                        font-size: 1.125rem;
+    
+                        @include responsive.desktop {
+                            font-size: 1.375rem;
+                        }
+                    }
                 }
             }
+
 
             &__input-message {
                 position: relative;
@@ -121,12 +163,17 @@
                     color: #F1F0EA;
                     font-size: 1rem;
                     letter-spacing: .0313rem;
+                    resize: none;
                 }
 
                 &-input:valid ~ &-label,
                 &-input:focus ~ &-label {
                     font-size: .875rem;
                     transform: translateY(-1.375rem);
+
+                    @include responsive.desktop {
+                        font-size: 1rem;
+                    }
                 }
 
                 &-label {
@@ -137,6 +184,10 @@
                     color: #F1F0EA;
                     transition: 0.5s;
                     font-size: 1.125rem;
+
+                    @include responsive.desktop {
+                        font-size: 1.375rem;
+                    }
                 }
             }
 
@@ -149,12 +200,17 @@
                 font-size: 1.125rem;
                 border-radius: 1.25rem;
 
+                @include responsive.desktop {
+                    font-size: 22px;
+                }
+
             }
         }
 
         &__details {
             display: flex;
             flex-direction: column;
+            padding-top: 1rem;
 
             @include responsive.tablet {
                 gap: 3rem;
@@ -180,6 +236,10 @@
                         font-size: 1.625rem;
                         padding-top: 1rem;
                     }
+
+                    @include responsive.desktop {
+                        font-size: 2.25rem;
+                    }
                 }
         
                 &-email {
@@ -191,6 +251,11 @@
                     @include responsive.tablet {
                         font-size: 1.125rem;
                         width: 10.1875rem;
+                    }
+
+                    @include responsive.desktop {
+                        font-size: 1.375rem;
+                        width: 12.375rem;
                     }
         
                     &::after {
@@ -222,6 +287,10 @@
                         font-size: 1.625rem;
                         padding-top: 1rem;
                     }
+
+                    @include responsive.desktop {
+                        font-size: 2.25rem;
+                    }
                 }
         
                 &__links {
@@ -239,6 +308,10 @@
                             @include responsive.tablet {
                                 height: 1.875rem;
                             }
+
+                            @include responsive.desktop {
+                                height: 2.1875rem;
+                            }
                         }
         
                         &-website {
@@ -247,6 +320,10 @@
 
                             @include responsive.tablet {
                                 font-size: 1.125rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 1.375rem;
                             }
         
                             &::after {
