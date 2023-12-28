@@ -2,15 +2,43 @@ import "./Contact.scss";
 import linked from "../../assets/icons/linkedin.svg";
 import github from "../../assets/icons/github.svg";
 import tiktok from "../../assets/icons/tiktok.svg";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import { motion, useAnimation} from "framer-motion";
 
 
 
-function Contact() {
-
+function Contact({sectionRef}) {
     const form = useRef();
     const [sent, setSent] = useState(false);
+
+    const titleControls = useAnimation();
+    const descriptionControls = useAnimation();
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            const element = sectionRef.current;
+            if (element) {
+                const elementTop = element.offsetTop + 200;
+                const scrollPosition = window.scrollY + window.innerHeight;
+                if (scrollPosition > elementTop && !isVisible) {
+                    setIsVisible(true);
+                    titleControls.start({ y: 0, opacity: 1 });
+                    setTimeout(() => {
+                        descriptionControls.start({ x: 0, opacity: 1 });
+                    }, 1000);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', onScroll);
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+        };
+
+    }, [titleControls, descriptionControls, isVisible])
 
 
     const sendEmail = (e) => {
@@ -29,20 +57,36 @@ function Contact() {
     }
 
     return(
-        <section className="contact" id="contact">
+        <section className="contact" id="contact" ref={sectionRef}>
             <header className="contact__header">
-                <h2 className="contact__header-title">CONTACT ME</h2>
+                <motion.h2 className="contact__header-title"
+                 initial={{ y: 100, opacity: 0 }}
+                 animate={titleControls}
+                 transition={{ duration: 0.6 }}
+                >
+                CONTACT ME
+                </motion.h2>
             </header>
 
             <div className="contact__form-container">
                 <form className="contact__form-container__form" ref={form} onSubmit={sendEmail}>
-                    <h3 className="contact__form-container__form-title">Need a Developer? Message me about your ideas!</h3>
+                    <motion.h3 className="contact__form-container__form-title"
+                      initial={{ x: -100, opacity: 0 }}
+                      animate={descriptionControls}
+                      transition={{ duration: 0.6 }}
+                    >
+                        Need a Developer? Message me about your ideas!
+                    </motion.h3>
                     
-                    <p className="contact__form-container__form-details">
+                    <motion.p className="contact__form-container__form-details"
+                     initial={{ x: -100, opacity: 0 }}
+                     animate={descriptionControls}
+                     transition={{ duration: 0.6 }}
+                    >
                     I am actively seeking opportunities as a Junior Front-End or Full Stack Web Developer. 
                     Additionally, I am open to taking on new projects. 
                     Feel free to reach out if you have any exciting opportunities or if you're looking for a dedicated developer for your projects!
-                    </p>
+                    </motion.p>
 
                     {/* Name */}
 

@@ -1,5 +1,5 @@
 import "./About.scss";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Profile from "../../assets/images/profile-picture.jpg";
 import tag from "../../assets/icons/code-slash-outline.svg";
 import terminal from "../../assets/icons/terminal-outline.svg";
@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 
 
-function About() {
+function About({sectionRef}) {
     const [animationComplete, setAnimationComplete] = useState(false);
     const text = "Hey! I'm Genn-Hong Lin and I'm a Junior Full Stack Web Developer based in Vancouver, B.C.";
     const [initialX, setInitialX] = useState(300);
@@ -17,6 +17,10 @@ function About() {
     const [finalY, setFinalY] = useState(400);
     const [font, setFont] = useState('23px');
     const [animationKey, setAnimationKey] = useState(0);
+    const titleControls = useAnimation();
+    const descriptionControls = useAnimation();
+    const [isVisible, setIsVisible] = useState(false);
+    
 
     const handleResize = () => {
         const newScreenWidth = window.innerWidth;
@@ -36,7 +40,7 @@ function About() {
             setInitialX(newScreenWidth);
             setInitialY(200);
             setFont('4rem');
-            setFinalY(350);
+            setFinalY(450);
         }
 
         setAnimationKey((prevKey) => prevKey + 1);
@@ -48,12 +52,34 @@ function About() {
         handleResize();
 
         window.addEventListener('resize', handleResize);
-
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []); 
+
+    useEffect(() => {
+        const onScroll = () => {
+            const element = sectionRef.current;
+            if (element) {
+                const elementTop = element.offsetTop + 200;
+                const scrollPosition = window.scrollY + window.innerHeight;
+                if (scrollPosition > elementTop && !isVisible) {
+                    setIsVisible(true);
+                    titleControls.start({ y: 0, opacity: 1 });
+                    setTimeout(() => {
+                        descriptionControls.start({ x: 0, opacity: 1 });
+                    }, 1000);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', onScroll);
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+        };
+
+    }, [titleControls, descriptionControls, isVisible])
 
     const charVariants = {
         initial: (index) => ({
@@ -101,14 +127,24 @@ function About() {
                     <p className={`about__hero__scatter-title ${animationComplete ? `display` : ``}`}>{text}</p>
                 </div>
             </motion.div>
-            <div className="about__details" id="about">
-                <h2 className="about__details-title">ABOUT ME</h2>
+            <div className="about__details" id="about" ref={sectionRef}>
+                <motion.h2 className="about__details-title"
+                initial={{ y: 100, opacity: 0 }}
+                animate={titleControls}
+                transition={{ duration: 0.6 }}
+                >
+                    ABOUT ME
+                </motion.h2>
 
                 <div className="about__details__bot">
                     <div className="about__details__bot__image-container">
                         <img alt="profile" src={Profile} className="about__details__bot__image-container-img"></img>
                     </div>
-                    <div className="about__details__bot__description__container">
+                    <motion.div className="about__details__bot__description__container" 
+                      initial={{ x: -200, opacity: 0 }}
+                      animate={descriptionControls}
+                      transition={{ duration: 0.6 }}
+                    >
                         <h3 className="about__details__bot__description__container-title">Who am I in a nutshell?</h3>
 
                         <p className="about__details__bot__description__container-intro">
@@ -127,7 +163,7 @@ function About() {
                         When I'm not deep in coding or designing, you can catch me practicing or competing in volleyball leagues. When volleyball isn't on the agenda, you'll likely find me in front of my computer,
                         either gaming with friends, indulging in some anime, or spending time with my dogs.  
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             

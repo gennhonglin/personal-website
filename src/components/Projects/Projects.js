@@ -3,13 +3,48 @@ import gloomhaven from "../../assets/projects/Gloomhaven Mockup Two.png";
 import GHLVolley from "../../assets/projects/GHLVolley Mockup.png";
 import pokemon from "../../assets/projects/Pokemon-Quiz-Mockup.png";
 import Google from "../../assets/projects/Google-Hackathon-Mockup.png";
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 
-function Projects() {
+function Projects({sectionRef}) {
+    const titleControls = useAnimation();
+    const descriptionControls = useAnimation();
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            const element = sectionRef.current;
+            if (element) {
+                const elementTop = element.offsetTop + 200;
+                const scrollPosition = window.scrollY + window.innerHeight;
+                if (scrollPosition > elementTop && !isVisible) {
+                    setIsVisible(true);
+                    titleControls.start({ y: 0, opacity: 1 });
+                    // setTimeout(() => {
+                    //     descriptionControls.start({ x: 0, opacity: 1 });
+                    // }, 1000);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', onScroll);
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+        };
+
+    }, [titleControls, isVisible])
     return(
-        <section className="project" id="project">
+        <section className="project" id="project" ref={sectionRef}>
             <div className="project__container">
                 <header className="project__container__header">
-                    <h2 className="project__container__header-title">PROJECTS</h2>
+                    <motion.h2 className="project__container__header-title"
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={titleControls}
+                    transition={{ duration: 0.6 }}
+                    >
+                        PROJECTS
+                    </motion.h2>
                 </header>
                 <div className="project__container__body">
                     <div className="project__container__body__project gloomhaven">

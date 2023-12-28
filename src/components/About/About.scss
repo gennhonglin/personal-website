@@ -14,7 +14,7 @@
         overflow: hidden;
 
         @include responsive.desktop {
-            height: 56.25rem;
+            height: 62.5rem
         }
         
 
@@ -61,7 +61,7 @@
 
                     @include responsive.desktop {
                         font-size: 4rem;
-                        top: 21.875rem;
+                        top: 28.125rem;
                     }
                 }
             }

@@ -2,13 +2,13 @@ import "./Header.scss";
 import logo from "../../assets/logo/GHL-Logo.png";
 import resume from "../../assets/resume/Resume.pdf";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 
-function Header() {
+function Header({ handleLinkClick }) {
     const [hamburger, setHamburger] = useState(false);
     const [menuClick, setMenuClick] = useState(false);
-    const [isHeaderFixed, setIsHeaderFixed] = useState(false);
+    const controls = useAnimation();
 
     const updateMenu = () => {
         if(!menuClick) {
@@ -21,14 +21,11 @@ function Header() {
     }
 
     useEffect(() => {
+
         function handleScroll() {
-          const scrollPosition = window.scrollY;
-          const distanceFromTop = 0; 
-    
-          if (scrollPosition > distanceFromTop) {
-            setIsHeaderFixed(true);
-          } else {
-            setIsHeaderFixed(false);
+          const scrollY = window.scrollY;
+          if (scrollY > 0) {
+                controls.start({ y: 0, transition: { type: 'tween', duration: 0.7 } });
           }
         }
     
@@ -50,7 +47,10 @@ function Header() {
 
 
     return(
-        <header className={`header ${isHeaderFixed ? 'fixed' : ''}`}>
+        <motion.header className="header"
+        initial={{ y: -100 }}
+        animate={controls}
+        >
             <nav className="header__nav">
                 <div className="header__nav__left">
                     <img alt="logo" src={logo} className="header__nav__left-logo"></img>
@@ -63,9 +63,9 @@ function Header() {
 
                     <div className="header__nav__right__tablet-nav">
                         <ul className="header__nav__right__tablet-nav__list">
-                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#about">About</a></li>
-                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#project">Project</a></li>
-                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#contact">Contact</a></li>
+                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('about', e)}>About</a></li>
+                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('project', e)}>Project</a></li>
+                            <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href="#" onClick={(e) => handleLinkClick('contact', e)}>Contact</a></li>
                             <li className="header__nav__right__tablet-nav__list__item"><a className="header__nav__right__tablet-nav__list__item-link" href={resume}>Resume</a></li>
                         </ul>
                     </div>
@@ -119,14 +119,14 @@ function Header() {
                                 }
                             }}
                         >
-                            <motion.li className="header__nav__container__menu__list" variants={links}><a href="#about" className="header__nav__container__menu__list-link">About</a></motion.li>
-                            <motion.li className="header__nav__container__menu__list" variants={links}><a href="#project" className="header__nav__container__menu__list-link">Projects</a></motion.li>
-                            <motion.li className="header__nav__container__menu__list" variants={links}><a href="#contact" className="header__nav__container__menu__list-link">Contact</a></motion.li>
+                            <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('about', e)}>About</a></motion.li>
+                            <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('project', e)}>Projects</a></motion.li>
+                            <motion.li className="header__nav__container__menu__list" variants={links}><a href="#" className="header__nav__container__menu__list-link" onClick={(e) => handleLinkClick('contact', e)}>Contact</a></motion.li>
                             <motion.li className="header__nav__container__menu__list" variants={links}><a href={resume} className="header__nav__container__menu__list-link">Resume</a></motion.li>
                         </motion.ul>
                 </motion.div>
             </nav>
-        </header>
+        </motion.header>
     )
 }
 

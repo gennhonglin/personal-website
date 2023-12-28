@@ -3,14 +3,10 @@
 .header {
     height: 3.75rem;
     width: 100%;
-    position: relative;
+    position:fixed;
     top: 0;
     z-index: 1000;
     background-color: #171D25;
-
-    &.fixed {
-        position:sticky;
-    }
 
 
     @include responsive.tablet {
