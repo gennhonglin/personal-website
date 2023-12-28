@@ -1,6 +1,6 @@
 import "./Header.scss";
 import logo from "../../assets/logo/GHL-Logo.png";
-import resume from "./Resume.pdf";
+import resume from "/Resume.pdf";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
