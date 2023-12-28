@@ -1,9 +1,17 @@
+@use "../../Styles/mixins" as responsive;
+
 .project{
     width: 100%;
+
     &__container {
         padding-top: 1.5rem;
         display: flex;
         flex-direction: column;
+
+        @include responsive.tablet {
+            padding: 3rem 0 2.25rem 0;
+        }
+
         &__header{
             padding-bottom: 1rem;
             &-title {
@@ -11,29 +19,97 @@
                 color: #F1F0EA;
                 text-align: center;
                 font-weight: 700;
+
+                @include responsive.tablet {
+                    font-size: 3rem;
+                }
+
+                @include responsive.desktop {
+                    font-size: 4rem;
+                }
             }
         }
+
+        
 
         &__body {
             padding: 1rem;
             display: flex;
             flex-direction: column;
 
+            @include responsive.tablet {
+                padding: 2.25rem;
+            }
+            
+            @include responsive.desktop {
+                padding: 2.25rem 5rem;
+            }
+
             &__project {
                 display: flex;
                 flex-direction: column;
+
+                @include responsive.desktop {
+                    width: 85%;
+                    margin: auto;
+                }
 
                 &-title {
                     color: #F1F0EA;
                     font-size: 1.5rem;
                     text-align: center;
                     padding-bottom: 1rem;
+                    font-weight: 500;
+
+                    @include responsive.tablet {
+                        font-size: 2rem;
+                    }
+
+                    @include responsive.desktop {
+                        font-size: 2.25rem;
+                    }
                 }
 
-                &-img {
+                &__image__container {
                     width: 100%;
                     height: 13.75rem;
+                    overflow: hidden;
+                    border-radius: .5rem;
+                    margin: auto;
+
+                    @include responsive.tablet {
+                        height: 100%;
+                    }
+
+                    @include responsive.desktop {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+
+                    &-img {
+                        width: 100%;
+                        height: 100%;
+                        transition: transform 0.5s ease;
+
+                        @include responsive.tablet {
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: .625rem;
+                        }
+
+                        @include responsive.desktop {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                        
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
                 }
+
 
                 &__details {
                     padding-top: 8px;
@@ -41,10 +117,15 @@
                     flex-direction: column;
                     gap: .3125rem;
 
+                    @include responsive.tablet {
+                        gap: 1rem;
+                    }
+
                     &__info {
                         display: flex;
                         justify-content: flex-start;
                         gap: .625rem;
+
                         &-year {
                             color: #bad3fd;
                             font-size: 1rem;
@@ -53,6 +134,17 @@
                             text-align: center;
                             border-radius: .5rem;
                             padding: .3125rem;
+
+                            @include responsive.tablet {
+                                font-size: 1.25rem;
+                                width: 4.375rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 1.625rem;
+                                width: 5rem;
+                            }
+
                         }
     
                         &-tech__stack {
@@ -63,38 +155,112 @@
                             text-align: center;
                             border-radius: .5rem;
                             padding: .3125rem;
+
+                            @include responsive.tablet {
+                                font-size: 1.25rem;
+                                width: 11.25rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 1.625rem;
+                                width: 13.75rem;
+                            }
                         }
                     }
 
                     &__container {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .625rem;
                         padding-bottom: 1.5rem;
+
+                        @include responsive.tablet {
+                            padding-bottom: 2.25rem;
+                        }
 
                         &-description {
                             color: #F1F0EA;
-                            font-size: .875rem
+                            font-size: .875rem;
+
+                            @include responsive.tablet {
+                                font-size: 1rem;
+                            }
+
+                            @include responsive.desktop {
+                                font-size: 1.375rem;
+                            }
                         }
                     }
                 }
             }
 
             &__hackathon {
+                display: flex;
+                flex-direction: column;
+
+                @include responsive.tablet {
+                    flex-direction: row;
+                    gap: 2.25rem;
+                }
+
                 &__project {
                     display: flex;
                     flex-direction: column;
+
+                    @include responsive.tablet {
+                        &.pokemon {
+                            margin-bottom: 18.75rem;
+                        }
+    
+                        &.fithaven {
+                            margin-top: 18.75rem;
+                        }
+
+                    }
+
+                    @include responsive.tablet {
+                        width: 50%;
+                    }
+
 
                     &-title {
                         color: #F1F0EA;
                         font-size: 1.5rem;
                         text-align: center;
                         padding-bottom: 1rem;
+                        font-weight: 500;
+
+                        @include responsive.tablet {
+                            font-size: 2rem;
+                        }
+
+                        @include responsive.desktop {
+                            font-size: 2.25rem;
+                        }
                     }
     
-                    &-img {
+                    &__image__container {
                         width: 100%;
                         height: 13.75rem;
+                        overflow: hidden;
+                        border-radius: .5rem;
+
+                        @include responsive.tablet {
+                            height: 100%;
+                        }
+
+
+
+                        &-img {
+                            width: 100%;
+                            height: 13.75rem;
+                            transition: transform 0.5s ease; 
+
+                            @include responsive.tablet {
+                                height: 100%;
+                            }
+                            
+                            &:hover {
+                                transform: scale(1.2);
+                            }
+                        }
                     }
     
                     &__details {
@@ -115,6 +281,16 @@
                                 text-align: center;
                                 border-radius: .5rem;
                                 padding: .3125rem;
+
+                                @include responsive.tablet {
+                                    font-size: 1.25rem;
+                                    width: 4.375rem;
+                                }
+
+                                @include responsive.desktop {
+                                    font-size: 1.625rem;
+                                    width: 5rem;
+                                }
                             }
         
                             &-tech__stack {
@@ -125,6 +301,16 @@
                                 text-align: center;
                                 border-radius: .5rem;
                                 padding: .3125rem;
+
+                                @include responsive.tablet {
+                                    font-size: 1.25rem;
+                                    width: 11.25rem;
+                                }
+
+                                @include responsive.desktop {
+                                    font-size: 1.625rem;
+                                    width: 13.75rem;
+                                }
                             }
                         }
     
@@ -133,10 +319,22 @@
                             flex-direction: column;
                             gap: .625rem;
                             padding-bottom: 1.5rem;
+
+                            @include responsive.tablet {
+                                padding-bottom: 2.25rem;
+                            }
     
                             &-description {
                                 color: #F1F0EA;
-                                font-size: .875rem
+                                font-size: .875rem;
+
+                                @include responsive.tablet {
+                                    font-size: 1rem;
+                                }
+
+                                @include responsive.desktop {
+                                    font-size: 1.375rem;
+                                }
                             }
                         }
                     }

@@ -3,18 +3,55 @@ import gloomhaven from "../../assets/projects/Gloomhaven Mockup Two.png";
 import GHLVolley from "../../assets/projects/GHLVolley Mockup.png";
 import pokemon from "../../assets/projects/Pokemon-Quiz-Mockup.png";
 import Google from "../../assets/projects/Google-Hackathon-Mockup.png";
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 
-function Projects() {
+function Projects({sectionRef}) {
+    const titleControls = useAnimation();
+    const descriptionControls = useAnimation();
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            const element = sectionRef.current;
+            if (element) {
+                const elementTop = element.offsetTop + 200;
+                const scrollPosition = window.scrollY + window.innerHeight;
+                if (scrollPosition > elementTop && !isVisible) {
+                    setIsVisible(true);
+                    titleControls.start({ y: 0, opacity: 1 });
+                    // setTimeout(() => {
+                    //     descriptionControls.start({ x: 0, opacity: 1 });
+                    // }, 1000);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', onScroll);
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+        };
+
+    }, [titleControls, isVisible])
     return(
-        <section className="project" id="project">
+        <section className="project" id="project" ref={sectionRef}>
             <div className="project__container">
                 <header className="project__container__header">
-                    <h2 className="project__container__header-title">PROJECTS</h2>
+                    <motion.h2 className="project__container__header-title"
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={titleControls}
+                    transition={{ duration: 0.6 }}
+                    >
+                        PROJECTS
+                    </motion.h2>
                 </header>
                 <div className="project__container__body">
-                    <div className="project__container__body__project">
+                    <div className="project__container__body__project gloomhaven">
                         <h3 className="project__container__body__project-title">Gloomhaven Tracker</h3>
-                        <img alt="Gloomhaven Tracker Site" className="project__container__body__project-img" src={gloomhaven} />
+                        <div className="project__container__body__project__image__container">
+                           <img alt="Gloomhaven Tracker Site" className="project__container__body__project__image__container-img" src={gloomhaven} /> 
+                        </div>
                         <div className="project__container__body__project__details">
                             <div className="project__container__body__project__details__info">
                                 <h4 className="project__container__body__project__details__info-year">2023</h4>
@@ -22,16 +59,18 @@ function Projects() {
                             </div>
                             <div className="project__container__body__project__details__container">
                                 <p className="project__container__body__project__details__container-description">
-                                    An app that keeps track of all the data in the board game gloomhaven without having to
-                                    physically keep track of it.
+                                An innovative app designed to seamlessly manage all aspects of the Gloomhaven board game, 
+                                eliminating the need for manual tracking by providing a digital solution for efficient data management.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="project__container__body__project">
+                    <div className="project__container__body__project ghlvolley">
                         <h3 className="project__container__body__project-title">GHLVolley</h3>
-                        <img alt="GHLVolley Site" className="project__container__body__project-img" src={GHLVolley} />
+                        <div className="project__container__body__project__image__container">
+                            <img alt="GHLVolley Site" className="project__container__body__project__image__container-img" src={GHLVolley} /> 
+                        </div>
                         <div className="project__container__body__project__details">
                             <div className="project__container__body__project__details__info">
                                 <h4 className="project__container__body__project__details__info-year">2022</h4>
@@ -39,17 +78,19 @@ function Projects() {
                             </div>
                             <div className="project__container__body__project__details__container">
                                 <p className="project__container__body__project__details__container-description">
-                                    An app that was designed for newer volleyball players to find resources to improve their gameplay and to
-                                    find local drop in's to play and practice at.
+                                An app tailored for volleyball enthusiasts, providing a curated platform to enhance their gameplay through valuable resources
+                                and discover local drop-in sessions for practice and play.
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div className="project__container__body__hackathon">
-                        <div className="project__container__body__hackathon__project">
+                        <div className="project__container__body__hackathon__project pokemon">
                             <h3 className="project__container__body__hackathon__project-title">Pokemon Quiz</h3>
-                            <img alt="Pokemon Quiz Site" className="project__container__body__hackathon__project-img" src={pokemon} />
+                            <div className="project__container__body__hackathon__project__image__container">
+                                <img alt="Pokemon Quiz Site" className="project__container__body__hackathon__project__image__container-img" src={pokemon} />
+                            </div>
                             <div className="project__container__body__hackathon__project__details">
                                 <div className="project__container__body__hackathon__project__details__info">
                                     <h4 className="project__container__body__hackathon__project__details__info-year">2022</h4>
@@ -57,16 +98,18 @@ function Projects() {
                                 </div>
                                 <div className="project__container__body__hackathon__project__details__container">
                                     <p className="project__container__body__hackathon__project__details__container-description">
-                                        An app that was developed during a mini hackthon that was assigned to us by Brainstation. This app was developed using
-                                        a Pokemon API and fetching the data to develop a quiz with it.
+                                    Created during a mini-hackathon assigned by Brainstation,
+                                    this app utilizes a Pokemon API, fetching data to craft an engaging quiz experience.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="project__container__body__hackathon__project">
-                        <h3 className="project__container__body__hackathon__project-title">Fit Haven </h3>
-                            <img alt="Google Hackathon Site" className="project__container__body__hackathon__project-img" src={Google} />
+                        <div className="project__container__body__hackathon__project fithaven">
+                            <h3 className="project__container__body__hackathon__project-title">Fit Haven </h3>
+                            <div className="project__container__body__hackathon__project__image__container">
+                                <img alt="Google Hackathon Site" className="project__container__body__hackathon__project__image__container-img" src={Google} />
+                            </div>
                             <div className="project__container__body__hackathon__project__details">
                                 <div className="project__container__body__hackathon__project__details__info">
                                     <h4 className="project__container__body__hackathon__project__details__info-year">2022</h4>
@@ -74,9 +117,9 @@ function Projects() {
                                 </div>
                                 <div className="project__container__body__hackathon__project__details__container">
                                     <p className="project__container__body__hackathon__project__details__container-description">
-                                        A mobile fitness app that was developed in mind for the paraplegic during a hackathon that was assigned to us by Google Employees during our bootcamp. This app
-                                        was developed by myself and my partner Marcelo. The UX/UI design of the app was designed by our lovely UX/UI designers Makenna and Pauline
-                                        and the data gathered for the app was done by our fantastic Data Analyts Michael and Oyeronke. 
+                                    My team and I created a mobile fitness app with a focus on accessibility for individuals with paraplegia during a hackathon organized by Google employees as part of our bootcamp.
+                                    The development work was led by myself and my partner, Marcelo. The app's intuitive UX/UI design was crafted by our talented designers, Makenna and Pauline.
+                                    Additionally, the valuable data needed for the app was meticulously gathered by our skilled data analysts, Michael and Oyeronke.
                                     </p>
                                 </div>
                             </div>
