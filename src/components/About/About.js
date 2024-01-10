@@ -200,9 +200,6 @@ function About({sectionRef}) {
                             <div className="about__skillset__stack__bot__back-end__bot">
                                 <p className="about__skillset__stack__bot__back-end__bot-skills">C++</p>
                                 <p className="about__skillset__stack__bot__back-end__bot-skills">Java</p>
-                                <p className="about__skillset__stack__bot__back-end__bot-skills">PHP</p>
-                                <p className="about__skillset__stack__bot__back-end__bot-skills">Shell</p>
-                                <p className="about__skillset__stack__bot__back-end__bot-skills">Perl</p>
                                 <p className="about__skillset__stack__bot__back-end__bot-skills">JSON</p>
                                 <p className="about__skillset__stack__bot__back-end__bot-skills">Node.js</p>
                                 <p className="about__skillset__stack__bot__back-end__bot-skills">Express</p>
