@@ -1,0 +1,205 @@
+.header {
+  height: 3.75rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #171D25;
+}
+@media (min-width: 768px) {
+  .header {
+    height: 5rem;
+  }
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0.5rem;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .header__nav {
+    padding: 1rem;
+  }
+}
+.header__nav__left {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: left;
+  gap: 0.3125rem;
+}
+.header__nav__left-logo {
+  height: 3.125rem;
+}
+@media (min-width: 768px) {
+  .header__nav__left-logo {
+    height: 3.75rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header__nav__left-logo {
+    height: 4.375rem;
+  }
+}
+.header__nav__left-title {
+  margin: 0;
+  height: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #F1F0EA;
+  margin-top: 0.625rem;
+}
+@media (min-width: 768px) {
+  .header__nav__left-title {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header__nav__left-title {
+    font-size: 1.625rem;
+    margin-top: 0;
+  }
+}
+.header__nav__right {
+  margin-top: 0.1875rem;
+}
+@media (min-width: 768px) {
+  .header__nav__right {
+    margin: 0;
+  }
+}
+.header__nav__right__hamburger {
+  position: relative;
+  display: block;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  outline: none;
+  border: 1px solid #F1F0EA;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+@media (min-width: 768px) {
+  .header__nav__right__hamburger {
+    display: none;
+  }
+}
+.header__nav__right__hamburger:hover {
+  background-color: #A1ACBD;
+}
+.header__nav__right__hamburger-bar, .header__nav__right__hamburger::before, .header__nav__right__hamburger::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #F1F0EA;
+  margin: 2px 0;
+  transition: 0.4s;
+}
+.header__nav__right__hamburger.active {
+  background-color: #A1ACBD;
+}
+.header__nav__right__hamburger.active::before {
+  transform: rotate(-45deg) translate(-2px, 3px);
+}
+.header__nav__right__hamburger.active::after {
+  transform: rotate(45deg) translate(-2px, -4px);
+}
+.header__nav__right__hamburger.active .header__nav__right__hamburger-bar {
+  opacity: 0;
+}
+.header__nav__right__tablet-nav {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header__nav__right__tablet-nav {
+    display: flex;
+    width: 18.75rem;
+    height: 100%;
+  }
+}
+@media (min-width: 1280px) {
+  .header__nav__right__tablet-nav {
+    width: 21.875rem;
+  }
+}
+.header__nav__right__tablet-nav__list {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+.header__nav__right__tablet-nav__list__item {
+  margin: auto;
+}
+.header__nav__right__tablet-nav__list__item-link {
+  color: #F1F0EA;
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+@media (min-width: 1280px) {
+  .header__nav__right__tablet-nav__list__item-link {
+    font-size: 1.25rem;
+  }
+}
+.header__nav__right__tablet-nav__list__item-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #F1F0EA;
+  transition: width 0.4s ease-in;
+}
+.header__nav__right__tablet-nav__list__item-link:hover::after {
+  width: 100%;
+}
+.header__nav__container {
+  display: none;
+}
+.header__nav__container__menu {
+  height: 7.8125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 1rem;
+}
+.header__nav__container__menu__list {
+  list-style: none;
+  color: #171D25;
+}
+.header__nav__container__menu__list-link {
+  color: #171D25;
+  text-decoration: none;
+  position: relative;
+}
+.header__nav__container__menu__list-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #171D25;
+  transition: width 0.4s ease-in;
+}
+.header__nav__container__menu__list-link:hover::after {
+  width: 100%;
+}
+.header__nav__container.active {
+  display: block;
+  position: absolute;
+  right: 0;
+  padding: 0.5rem;
+  height: 9.375rem;
+  width: 9.375rem;
+  transform: translate(-0.5rem, 3.75rem);
+  border: 2px solid #171D25;
+  border-radius: 0.5rem;
+  background-color: #A1ACBD;
+}/*# sourceMappingURL=Header.css.map */

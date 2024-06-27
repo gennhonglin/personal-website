@@ -1,0 +1,26 @@
+.footer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__copyright {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #F1F0EA;
+}
+@media (min-width: 768px) {
+  .footer__copyright {
+    font-size: 1.25rem;
+  }
+}
+.footer__detail {
+  font-size: 0.875rem;
+  color: #F1F0EA;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer__detail {
+    font-size: 1.125rem;
+  }
+}/*# sourceMappingURL=Footer.css.map */

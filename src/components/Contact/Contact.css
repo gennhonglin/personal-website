@@ -1,0 +1,342 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .contact {
+    padding: 2.25rem;
+    padding-top: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .contact {
+    padding: 0 5rem;
+  }
+}
+.contact__header {
+  padding-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .contact__header {
+    padding-top: 0.75rem;
+  }
+}
+.contact__header-title {
+  font-size: 2rem;
+  color: #F1F0EA;
+  text-align: center;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .contact__header-title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__header-title {
+    font-size: 4rem;
+  }
+}
+.contact__form-container {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .contact__form-container {
+    flex-direction: row;
+    gap: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__form-container {
+    gap: 4rem;
+  }
+}
+.contact__form-container__form {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .contact__form-container__form {
+    width: 65%;
+  }
+}
+.contact__form-container__form-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #F1F0EA;
+}
+@media (min-width: 768px) {
+  .contact__form-container__form-title {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__form-container__form-title {
+    font-size: 2.25rem;
+  }
+}
+.contact__form-container__form-details {
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  color: #F1F0EA;
+}
+@media (min-width: 768px) {
+  .contact__form-container__form-details {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__form-container__form-details {
+    font-size: 1.375rem;
+    padding: 1.5rem 0;
+  }
+}
+.contact__form-container__form__data {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1280px) {
+  .contact__form-container__form__data {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+.contact__form-container__form__data__input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+.contact__form-container__form__data__input-container-input {
+  position: relative;
+  width: 100%;
+  padding: 0.625rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #F1F0EA;
+  outline: none;
+  color: #F1F0EA;
+  font-size: 1rem;
+  letter-spacing: 0.0313rem;
+}
+.contact__form-container__form__data__input-container-input:valid ~ .contact__form-container__form__data__input-container-label, .contact__form-container__form__data__input-container-input:focus ~ .contact__form-container__form__data__input-container-label {
+  font-size: 0.875rem;
+  transform: translateY(-1.375rem);
+}
+@media (min-width: 1280px) {
+  .contact__form-container__form__data__input-container-input:valid ~ .contact__form-container__form__data__input-container-label, .contact__form-container__form__data__input-container-input:focus ~ .contact__form-container__form__data__input-container-label {
+    font-size: 1rem;
+  }
+}
+.contact__form-container__form__data__input-container-label {
+  position: absolute;
+  left: 0;
+  padding: 0.625rem 0;
+  pointer-events: none;
+  color: #F1F0EA;
+  transition: 0.5s;
+  font-size: 1.125rem;
+}
+@media (min-width: 1280px) {
+  .contact__form-container__form__data__input-container-label {
+    font-size: 1.375rem;
+  }
+}
+.contact__form-container__form__input-message {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+.contact__form-container__form__input-message-input {
+  position: relative;
+  width: 100%;
+  height: 9.375rem;
+  padding: 0.625rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #F1F0EA;
+  outline: none;
+  color: #F1F0EA;
+  font-size: 1rem;
+  letter-spacing: 0.0313rem;
+  resize: none;
+}
+.contact__form-container__form__input-message-input:valid ~ .contact__form-container__form__input-message-label, .contact__form-container__form__input-message-input:focus ~ .contact__form-container__form__input-message-label {
+  font-size: 0.875rem;
+  transform: translateY(-1.375rem);
+}
+@media (min-width: 1280px) {
+  .contact__form-container__form__input-message-input:valid ~ .contact__form-container__form__input-message-label, .contact__form-container__form__input-message-input:focus ~ .contact__form-container__form__input-message-label {
+    font-size: 1rem;
+  }
+}
+.contact__form-container__form__input-message-label {
+  position: absolute;
+  left: 0;
+  padding: 0.625rem 0;
+  pointer-events: none;
+  color: #F1F0EA;
+  transition: 0.5s;
+  font-size: 1.125rem;
+}
+@media (min-width: 1280px) {
+  .contact__form-container__form__input-message-label {
+    font-size: 1.375rem;
+  }
+}
+.contact__form-container__form__submit {
+  width: 9.375rem;
+  padding: 0.625rem;
+  background-color: #F1F0EA;
+  border: 1px solid #171D25;
+  color: #171D25;
+  font-size: 1.125rem;
+  border-radius: 1.25rem;
+}
+@media (min-width: 1280px) {
+  .contact__form-container__form__submit {
+    font-size: 22px;
+  }
+}
+.contact__form-container__details {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .contact__form-container__details {
+    gap: 3rem;
+    width: 35%;
+  }
+}
+.contact__form-container__details__email {
+  height: 6.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+@media (min-width: 768px) {
+  .contact__form-container__details__email {
+    height: 9.375rem;
+  }
+}
+.contact__form-container__details__email-title {
+  color: #F1F0EA;
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .contact__form-container__details__email-title {
+    font-size: 1.625rem;
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__form-container__details__email-title {
+    font-size: 2.25rem;
+  }
+}
+.contact__form-container__details__email-email {
+  width: 9.0625rem;
+  text-decoration: none;
+  color: #F1F0EA;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .contact__form-container__details__email-email {
+    font-size: 1.125rem;
+    width: 10.1875rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__form-container__details__email-email {
+    font-size: 1.375rem;
+    width: 12.375rem;
+  }
+}
+.contact__form-container__details__email-email::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #F1F0EA;
+  transition: width 0.4s ease-in;
+}
+.contact__form-container__details__email-email:hover::after {
+  width: 100%;
+}
+.contact__form-container__details__web {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.contact__form-container__details__web-title {
+  color: #F1F0EA;
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .contact__form-container__details__web-title {
+    font-size: 1.625rem;
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__form-container__details__web-title {
+    font-size: 2.25rem;
+  }
+}
+.contact__form-container__details__web__links {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact__form-container__details__web__links__ref {
+  display: flex;
+  gap: 0.625rem;
+  text-decoration: none;
+}
+.contact__form-container__details__web__links__ref-img {
+  height: 1.5625rem;
+}
+@media (min-width: 768px) {
+  .contact__form-container__details__web__links__ref-img {
+    height: 1.875rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__form-container__details__web__links__ref-img {
+    height: 2.1875rem;
+  }
+}
+.contact__form-container__details__web__links__ref-website {
+  color: #F1F0EA;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .contact__form-container__details__web__links__ref-website {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 1280px) {
+  .contact__form-container__details__web__links__ref-website {
+    font-size: 1.375rem;
+  }
+}
+.contact__form-container__details__web__links__ref-website::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #F1F0EA;
+  transition: width 0.4s ease-in;
+}
+.contact__form-container__details__web__links__ref-website:hover::after {
+  width: 100%;
+}/*# sourceMappingURL=Contact.css.map */
